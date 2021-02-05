@@ -1,0 +1,9 @@
+pyttsx3
+playsound
+gTTS
+SpeechRecognition
+wikipedia
+selenium
+webdriver-manager
+youtube-search
+PyAudio
