@@ -30,6 +30,7 @@ language = 'vi'
 # chuyển văn bản thành âm thanh
 def speak(text):
     print("Trợ Lý ảo:  ", text)
+
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
     rate = engine.getProperty('rate')
@@ -41,12 +42,21 @@ def speak(text):
     engine.runAndWait()
 
 
+    # tts = gTTS(text=text, lang="vi", slow=False)
+    # tts.save("sound.mp3")
+    # playsound.playsound("sound.mp3", True)
+    # os.remove("sound.mp3")
+
+
 # chuyển giọng nói thành văn bản
 def get_audio():
     ear_robot = sr.Recognizer()
     with sr.Microphone() as source:
         print("Trợ Lý Ảo:  Đang nghe ! -- __ -- !")
-        audio = ear_robot.listen(source, phrase_time_limit=5)
+
+        ear_robot.pause_threshold = 4
+        audio = ear_robot.listen(source )
+        # audio = ear_robot.listen(source, phrase_time_limit=5)
         try:
             text = ear_robot.recognize_google(audio, language="vi-VN")
             print("Tôi:  ", text)
@@ -71,7 +81,7 @@ def get_audio_2():
 
 
 def stop():
-    speak("Hẹn găp lại sau nha ! ... ")
+    speak("Hẹn gặp lại sau nha ! ... ")
 
 
 def get_text():
@@ -300,7 +310,7 @@ def tell_me_about():
 
 def help_me():
     speak(f"""
-    {robot_name} có thể giúp bạn thực hiện các việ sau đây:
+    {robot_name} có thể giúp bạn thực hiện các việc sau đây:
     1. chào hỏi
     2. Hiển thị giờ
     3. Mở website, ứng dụng desktop

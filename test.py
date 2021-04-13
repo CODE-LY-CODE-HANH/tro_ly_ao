@@ -91,10 +91,10 @@
 #     # stop()
 #     return 0
 # get_text()
-import os
-myPATH = r"D:\testcode\youtube\music_youtube"
-ds = os.listdir(myPATH)
-for i in ds:
-    print("\nĐang phát bài :  " + i)
-    os.system(myPATH + "\\" + i)
-    print("\nĐã phát xong bài : \t\t" + i)
+# import os
+# myPATH = r"D:\testcode\youtube\music_youtube"
+# ds = os.listdir(myPATH)
+# for i in ds:
+#     print("\nĐang phát bài :  " + i)
+#     os.system(myPATH + "\\" + i)
+#     print("\nĐã phát xong bài : \t\t" + i)
