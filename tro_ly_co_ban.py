@@ -48,7 +48,7 @@ while True:
 
     print("\nAI: " + ai_brain)
 
-    tts = gTTS(text = ai_brain, lang = 'vi' , slow= False)
+    tts = gTTS(text = ai_brain, lang = 'vi')
     tts.save("ai.mp3")
     # os.system("ai.mp3")
     # hoặc có thể dùng 2 lệnh dưới thay os.system("D:\\testcode\\youtube\\ai.mp3")
