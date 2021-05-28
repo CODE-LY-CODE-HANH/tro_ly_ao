@@ -16,6 +16,10 @@ while True:
         print("\nAI: ... ")
     try:
         you = ai_ear.recognize_google(audio, language = 'vi-VN')
+        if you:
+            pass
+        else:
+            you = "Xin chào"
         # nghe và nối giọng việt nam
         print("\nNgười sử dụng:  " + you)
     except:
