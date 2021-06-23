@@ -58,8 +58,6 @@ while True:
         playsound.playsound("ai.mp3")
         os.remove("ai.mp3")
         exit()
-    # elif ai_brain:
-    #     pass
     else:
         ai_brain = "Tôi không nghe rõ. Bạn nói lại đi !!! "
         # print("\nAI: " + ai_brain)
