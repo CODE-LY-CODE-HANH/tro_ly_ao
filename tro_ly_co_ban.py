@@ -16,13 +16,14 @@ while True:
         # AI nghe trong vòng 5 giây rồi tắt mic
         print("\nAI: ... ")
     try:
+        # Nghe giọng nói của người Việt
         you = ai_ear.recognize_google(audio, language = 'vi-VN')
         if you:
             you = you.lower()  # chuyển văn bản về chữ THƯỜNG
         else:
             you = "Xin chào"
             you = you.lower()  # chuyển văn bản về chữ THƯỜNG
-        # nghe và nối giọng việt nam
+
         print("\nNgười sử dụng:  " + you)
     except:
         # Nếu gặp lỗi thi
