@@ -29,7 +29,7 @@ while True:
         # Nếu gặp lỗi thi
         ai_brain = "Tôi không hiểu bạn nói gì cả ! ..."
         print("\nAI:  " + ai_brain)
-
+        # trợ lý ảo nói
         tts = gTTS(text=ai_brain, lang='vi', slow=False)
         tts.save("ai.mp3")
         # os.system("ai.mp3")
