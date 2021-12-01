@@ -31,21 +31,21 @@ language = 'vi'
 def speak(text):
     print("Trợ Lý ảo:  ", text)
 
-    engine = pyttsx3.init()
-    voices = engine.getProperty('voices')
-    rate = engine.getProperty('rate')
-    volume = engine.getProperty('volume')
-    engine.setProperty('volume', volume - 0.0)  # tu 0.0 -> 1.0
-    engine.setProperty('rate', rate - 50)
-    engine.setProperty('voice', voices[1].id)
-    engine.say(text)
-    engine.runAndWait()
+    # engine = pyttsx3.init()
+    # voices = engine.getProperty('voices')
+    # rate = engine.getProperty('rate')
+    # volume = engine.getProperty('volume')
+    # engine.setProperty('volume', volume - 0.0)  # tu 0.0 -> 1.0
+    # engine.setProperty('rate', rate - 50)
+    # engine.setProperty('voice', voices[1].id)
+    # engine.say(text)
+    # engine.runAndWait()
 
 
-    # tts = gTTS(text=text, lang="vi", slow=False)
-    # tts.save("sound.mp3")
-    # playsound.playsound("sound.mp3", True)
-    # os.remove("sound.mp3")
+    tts = gTTS(text=text, lang="vi", slow=False)
+    tts.save("sound.mp3")
+    playsound.playsound("sound.mp3", True)
+    os.remove("sound.mp3")
 
 
 # chuyển giọng nói thành văn bản
@@ -54,14 +54,16 @@ def get_audio():
     with sr.Microphone() as source:
         print("Trợ Lý Ảo:  Đang nghe ! -- __ -- !")
 
-        ear_robot.pause_threshold = 4
-        audio = ear_robot.listen(source )
+        # ear_robot.pause_threshold = 4
+        audio = ear_robot.record(source , duration= 4)
         # audio = ear_robot.listen(source, phrase_time_limit=5)
+
         try:
+            print(("Trợ Lý Ảo :  ...  "))
             text = ear_robot.recognize_google(audio, language="vi-VN")
             print("Tôi:  ", text)
             return text
-        except:
+        except Exception as ex:
             print("Trợ Lý Ảo:  Lỗi Rồi ! ... !")
             return 0
 

@@ -1,5 +1,5 @@
 pyttsx3
-playsound
+playsound==1.2.2
 gTTS
 SpeechRecognition
 wikipedia
@@ -7,3 +7,5 @@ selenium
 webdriver-manager
 youtube-search
 PyAudio
+google-api-python-client
+oauth2client

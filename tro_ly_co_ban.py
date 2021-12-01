@@ -68,5 +68,12 @@ while True:
     tts.save("ai.mp3")
     # os.system("ai.mp3")
     # hoặc có thể dùng 2 lệnh dưới thay os.system("D:\\testcode\\youtube\\ai.mp3")
-    playsound.playsound("ai.mp3")
-    os.remove("ai.mp3")
+    print( playsound.playsound("ai.mp3" ) )
+    try:
+        os.remove("ai.mp3")
+    except Exception as ex:
+        print(f"Error: File ai.mp3 vẫn đang được mỏ. Vui lòng đóng file !\n{ex}")
+
+'''
+nếu gặp lỗi 
+'''
